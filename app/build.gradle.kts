@@ -1,6 +1,10 @@
+import com.practice.realtimeweather.Dependency
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -50,20 +54,37 @@ android {
 }
 
 dependencies {
+    kapt(Dependency.Plugin.HILT_COMPILER)
+    kapt(Dependency.Plugin.LIFECYCLE_COMPILER)
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.activity:activity-compose:1.7.0")
-    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation(Dependency.AndroidX.CORE_KTX)
+    implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME_KTX)
+    implementation(Dependency.AndroidX.ACTIVITY_COMPOSE)
+    implementation(platform(Dependency.AndroidX.COMPOSE_BOM))
+    implementation(Dependency.AndroidX.COMPOSE_UI)
+    implementation(Dependency.AndroidX.COMPOSE_UI_GRAPHICS)
+    implementation(Dependency.AndroidX.COMPOSE_UI_TOOLING_PREVIEW)
+    implementation(Dependency.AndroidX.COMPOSE_MATERIAL)
+    implementation(Dependency.Client.OK_HTTP)
+    implementation(Dependency.Client.RETROFIT)
+    implementation(Dependency.Converter.GSON)
+    implementation(Dependency.Coroutine.COROUTINE)
+    implementation(Dependency.ViewModel.LIFECYCLE_KTX)
+    implementation(Dependency.ViewModel.LIFECYCLE_COMPOSE)
+    implementation(Dependency.DependencyInjection.Hilt)
+    implementation(Dependency.Navigation.COMPOSE)
+
+    testImplementation(Dependency.JUNIT.J_UNIT)
+
+    androidTestImplementation(Dependency.AndroidTest.TEST_EXT_JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+    androidTestImplementation(platform(Dependency.AndroidX.COMPOSE_BOM))
+    androidTestImplementation(Dependency.AndroidTest.COMPOSE_UI_TEST_JUNIT)
+
+    debugImplementation(Dependency.AndroidDebug.COMPOSE_UI_TOOLING)
+    debugImplementation(Dependency.AndroidDebug.COMPOSE_UI_TEST_MANIFEST)
+}
+
+kapt {
+    correctErrorTypes = true
 }
