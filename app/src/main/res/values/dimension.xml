@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_horizontal_padding">20dp</dimen>
+    <dimen name="content_padding_extra_small">2dp</dimen>
+    <dimen name="content_padding_small">8dp</dimen>
+    <dimen name="content_padding_medium">14dp</dimen>
+    <dimen name="content_padding_large">18dp</dimen>
+    <dimen name="weather_icon_size">90dp</dimen>
+    <dimen name="weather_details_height">120dp</dimen>
+    <dimen name="font_padding">4dp</dimen>
+</resources>

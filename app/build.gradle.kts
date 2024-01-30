@@ -67,12 +67,15 @@ dependencies {
     implementation(Dependency.AndroidX.COMPOSE_MATERIAL)
     implementation(Dependency.Client.OK_HTTP)
     implementation(Dependency.Client.RETROFIT)
-    implementation(Dependency.Converter.GSON)
     implementation(Dependency.Coroutine.COROUTINE)
     implementation(Dependency.ViewModel.LIFECYCLE_KTX)
     implementation(Dependency.ViewModel.LIFECYCLE_COMPOSE)
     implementation(Dependency.DependencyInjection.Hilt)
     implementation(Dependency.Navigation.COMPOSE)
+    implementation(Dependency.Moshi.MOSHI)
+    implementation(Dependency.Moshi.MOSHI_KOTLIN)
+    implementation(Dependency.Moshi.MOSHI_CONVERTOR)
+    implementation(Dependency.Coin.COIN)
 
     testImplementation(Dependency.JUNIT.J_UNIT)
 
