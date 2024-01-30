@@ -8,4 +8,7 @@
     <dimen name="weather_icon_size">90dp</dimen>
     <dimen name="weather_details_height">120dp</dimen>
     <dimen name="font_padding">4dp</dimen>
+    <dimen name="weather_icon_small">50dp</dimen>
+    <dimen name="hourly_weather_card_width">54dp</dimen>
+    <dimen name="hourly_weather_card_height">76dp</dimen>
 </resources>
