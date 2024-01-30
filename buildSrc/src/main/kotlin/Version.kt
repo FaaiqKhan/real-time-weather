@@ -26,11 +26,6 @@ object Version {
         const val RETROFIT = "2.9.0"
     }
 
-    object Converter {
-
-        const val GSON = "2.9.0"
-    }
-
     object Coroutine {
 
         const val COROUTINE = "1.3.9"
@@ -47,6 +42,17 @@ object Version {
     }
 
     object Navigation {
+
         const val COMPOSE = "2.7.6"
+    }
+
+    object Moshi {
+
+        const val MOSHI = "1.11.0"
+    }
+
+    object Coin {
+
+        const val COIN = "2.5.0"
     }
 }

@@ -41,11 +41,6 @@ object Dependency {
         const val RETROFIT = "com.squareup.retrofit2:retrofit:${Version.Client.RETROFIT}"
     }
 
-    object Converter {
-
-        const val GSON = "com.squareup.retrofit2:converter-gson:${Version.Converter.GSON}"
-    }
-
     object Plugin {
 
         const val LIFECYCLE_COMPILER =
@@ -76,5 +71,18 @@ object Dependency {
     object Navigation {
 
         const val COMPOSE = "androidx.navigation:navigation-compose:${Version.Navigation.COMPOSE}"
+    }
+
+    object Moshi {
+
+        const val MOSHI = "com.squareup.moshi:moshi:${Version.Moshi.MOSHI}"
+        const val MOSHI_KOTLIN = "com.squareup.moshi:moshi-kotlin:${Version.Moshi.MOSHI}"
+        const val MOSHI_CONVERTOR =
+            "com.squareup.retrofit2:converter-moshi:${Version.Client.RETROFIT}"
+    }
+
+    object Coin {
+
+        const val COIN = "io.coil-kt:coil-compose:${Version.Coin.COIN}"
     }
 }
