@@ -41,11 +41,6 @@ object Version {
         const val HILT = "2.44"
     }
 
-    object Navigation {
-
-        const val COMPOSE = "2.7.6"
-    }
-
     object Moshi {
 
         const val MOSHI = "1.11.0"
@@ -54,5 +49,10 @@ object Version {
     object Coin {
 
         const val COIN = "2.5.0"
+    }
+
+    object Pager {
+
+        const val PAGER = "0.27.1"
     }
 }

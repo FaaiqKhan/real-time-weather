@@ -68,11 +68,6 @@ object Dependency {
         const val Hilt = "com.google.dagger:hilt-android:${Version.DependencyInjection.HILT}"
     }
 
-    object Navigation {
-
-        const val COMPOSE = "androidx.navigation:navigation-compose:${Version.Navigation.COMPOSE}"
-    }
-
     object Moshi {
 
         const val MOSHI = "com.squareup.moshi:moshi:${Version.Moshi.MOSHI}"
@@ -84,5 +79,11 @@ object Dependency {
     object Coin {
 
         const val COIN = "io.coil-kt:coil-compose:${Version.Coin.COIN}"
+    }
+
+    object Pager {
+
+        const val PAGER =
+            "com.google.accompanist:accompanist-pager-indicators:${Version.Pager.PAGER}"
     }
 }
