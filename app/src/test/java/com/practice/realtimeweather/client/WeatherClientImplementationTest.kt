@@ -24,9 +24,7 @@ class WeatherClientImplementationTest {
         val result = weatherClient.getTodayWeather(TestData.country)
 
         // then
-        result shouldBe TodayWeatherDataResult.Success(
-            todayWeatherUIData = TestData.todayWeatherUIData
-        )
+        result shouldBe TestData.todayWeatherDataResultSuccess
     }
 
     @Test
@@ -38,9 +36,7 @@ class WeatherClientImplementationTest {
         val result = weatherClient.getTodayWeather(TestData.country)
 
         // then
-        result shouldBe TodayWeatherDataResult.Error(
-            errorMessage = TestData.errorMessage
-        )
+        result shouldBe TestData.todayWeatherDataResultError
     }
 
     @Test
@@ -57,9 +53,7 @@ class WeatherClientImplementationTest {
         val result = weatherClient.getWeeklyWeatherForecast(TestData.country, TestData.days)
 
         // then
-        result shouldBe WeeklyWeatherDataResult.Success(
-            weeklyWeatherUIData = TestData.weeklyWeatherUIData
-        )
+        result shouldBe TestData.weeklyWeatherDataResultSuccess
     }
 
     @Test
@@ -76,9 +70,7 @@ class WeatherClientImplementationTest {
         val result = weatherClient.getWeeklyWeatherForecast(TestData.country, TestData.days)
 
         // then
-        result shouldBe WeeklyWeatherDataResult.Error(
-            errorMessage = TestData.errorMessage
-        )
+        result shouldBe TestData.weeklyWeatherDataResultError
     }
 
     @Test
@@ -93,9 +85,7 @@ class WeatherClientImplementationTest {
             weatherClient.getWeatherHistory(TestData.country, TestData.startDate, TestData.endDate)
 
         // then
-        result shouldBe WeeklyWeatherDataResult.Success(
-            weeklyWeatherUIData = TestData.weeklyWeatherUIData
-        )
+        result shouldBe TestData.weeklyWeatherDataResultSuccess
     }
 
     @Test
@@ -110,9 +100,7 @@ class WeatherClientImplementationTest {
             weatherClient.getWeatherHistory(TestData.country, TestData.startDate, TestData.endDate)
 
         // then
-        result shouldBe WeeklyWeatherDataResult.Error(
-            errorMessage = TestData.errorMessage
-        )
+        result shouldBe TestData.weeklyWeatherDataResultError
     }
 
 }
