@@ -2,21 +2,34 @@ package com.practice.realtimeweather.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.pager.*
 import com.practice.realtimeweather.R
+import com.practice.realtimeweather.ui.todayWeatherView.TodayWeatherView
+import com.practice.realtimeweather.ui.weeklyWeatherView.WeeklyWeatherView
+import com.practice.realtimeweather.utils.Utils
 import kotlinx.coroutines.launch
-
-val tabData = listOf("Last 14 days", "Today", "7 days")
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun RealTimeWeather() {
+fun RealTimeWeather(
+    weatherViewModel: RealTimeWeatherViewModel = viewModel()
+) {
     val scope = rememberCoroutineScope()
-    val pagerState = rememberPagerState()
+    val pagerState = rememberPagerState(initialPage = 1)
+
+    val weatherHistoryUIState by weatherViewModel
+        .getWeeklyWeatherHistoryViewState()
+        .collectAsState()
+    val weatherUIState by weatherViewModel
+        .getTodayWeatherViewState()
+        .collectAsState()
+    val weatherForecastUIState by weatherViewModel
+        .getWeeklyWeatherForecastViewState()
+        .collectAsState()
 
     Scaffold {
         Column(modifier = Modifier.padding(it)) {
@@ -32,7 +45,7 @@ fun RealTimeWeather() {
                     )
                 },
             ) {
-                tabData.forEachIndexed { index, s ->
+                Utils.tabs.forEachIndexed { index, s ->
                     Tab(
                         selected = pagerState.currentPage == index,
                         onClick = {
@@ -46,11 +59,22 @@ fun RealTimeWeather() {
                 }
             }
 
-            HorizontalPager(count = tabData.size, state = pagerState) { index ->
+            HorizontalPager(count = Utils.tabs.size, state = pagerState) { index ->
                 when (index) {
-                    0 -> Text(text = "FAIQ")
-                    1 -> Text(text = "ALI")
-                    2 -> Text(text = "KHAN")
+                    0 -> WeeklyWeatherView(
+                        modifier = Modifier.fillMaxSize(),
+                        viewState = weatherHistoryUIState,
+                    )
+
+                    1 -> TodayWeatherView(
+                        modifier = Modifier.fillMaxSize(),
+                        viewState = weatherUIState,
+                    )
+
+                    2 -> WeeklyWeatherView(
+                        modifier = Modifier.fillMaxSize(),
+                        viewState = weatherForecastUIState
+                    )
                 }
             }
         }
