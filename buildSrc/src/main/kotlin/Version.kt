@@ -60,5 +60,6 @@ object Version {
 
         const val MOCKK = "1.13.9"
         const val KOTEST = "5.8.0"
+        const val TURBINE = "1.0.0"
     }
 }

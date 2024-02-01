@@ -92,5 +92,6 @@ object Dependency {
         const val MOCKK = "io.mockk:mockk:${Version.Test.MOCKK}"
         const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.Coroutine.COROUTINE}"
         const val KOTEST = "io.kotest:kotest-assertions-core:${Version.Test.KOTEST}"
+        const val TURBINE = "app.cash.turbine:turbine:${Version.Test.TURBINE}"
     }
 }

@@ -81,6 +81,7 @@ dependencies {
     testImplementation(Dependency.Test.MOCKK)
     testImplementation(Dependency.Test.COROUTINE)
     testImplementation(Dependency.Test.KOTEST)
+    testImplementation(Dependency.Test.TURBINE)
 
     androidTestImplementation(Dependency.AndroidTest.TEST_EXT_JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
