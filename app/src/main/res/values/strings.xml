@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">RealTimeWeather</string>
-    <string name="today">Today</string>
     <string name="celsius_symbol">\u2103</string>
-    <string name="fahrenheit_symbol">\u2109</string>
     <string name="degree_symbol">\u00B0</string>
-    <string name="dot_symbol">\u2022</string>
-    <string name="up_arrow_symbol">\u2191</string>
-    <string name="down_arrow_symbol">\u2193</string>
     <string name="weather_condition_icon">Weather condition icon</string>
     <string name="current_details">Current details</string>
     <string name="precipitation">Precipitation</string>
     <string name="wind">Wind</string>
+    <string name="feels_like">Feels like %1$s</string>
+    <string name="km_h">km/h</string>
 </resources>
