@@ -65,7 +65,7 @@ object Dependency {
 
     object DependencyInjection {
 
-        const val Hilt = "com.google.dagger:hilt-android:${Version.DependencyInjection.HILT}"
+        const val HILT = "com.google.dagger:hilt-android:${Version.DependencyInjection.HILT}"
     }
 
     object Moshi {

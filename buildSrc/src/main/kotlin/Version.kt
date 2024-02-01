@@ -38,7 +38,7 @@ object Version {
 
     object DependencyInjection {
 
-        const val HILT = "2.44"
+        const val HILT = "2.50"
     }
 
     object Moshi {
