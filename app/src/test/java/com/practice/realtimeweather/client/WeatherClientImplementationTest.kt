@@ -18,11 +18,10 @@ class WeatherClientImplementationTest {
     @Test
     fun `getTodayWeather should return success when api succeeds`() = runTest {
         // given
-        val country = "Berlin"
-        coEvery { apiClient.getTodayWeather(country) } returns TestData.todayWeather
+        coEvery { apiClient.getTodayWeather(TestData.country) } returns TestData.todayWeather
 
         // when
-        val result = weatherClient.getTodayWeather(country)
+        val result = weatherClient.getTodayWeather(TestData.country)
 
         // then
         result shouldBe TodayWeatherDataResult.Success(
@@ -33,28 +32,29 @@ class WeatherClientImplementationTest {
     @Test
     fun `getTodayWeather should return error when api fails`() = runTest {
         // given
-        val country = "Berlin"
-        val errorMessage = "Invalid api key"
-        coEvery { apiClient.getTodayWeather(country) } throws Exception(errorMessage)
+        coEvery { apiClient.getTodayWeather(TestData.country) } throws Exception(TestData.errorMessage)
 
         // when
-        val result = weatherClient.getTodayWeather(country)
+        val result = weatherClient.getTodayWeather(TestData.country)
 
         // then
         result shouldBe TodayWeatherDataResult.Error(
-            errorMessage = errorMessage
+            errorMessage = TestData.errorMessage
         )
     }
 
     @Test
     fun `getWeeklyWeatherForecast should return success when api succeeds`() = runTest {
         // given
-        val country = "Berlin"
-        val days = "7"
-        coEvery { apiClient.getNextWeekWeather(country, days) } returns TestData.weeklyWeather
+        coEvery {
+            apiClient.getNextWeekWeather(
+                TestData.country,
+                TestData.days
+            )
+        } returns TestData.weeklyWeather
 
         // when
-        val result = weatherClient.getWeeklyWeatherForecast(country, days)
+        val result = weatherClient.getWeeklyWeatherForecast(TestData.country, TestData.days)
 
         // then
         result shouldBe WeeklyWeatherDataResult.Success(
@@ -65,32 +65,32 @@ class WeatherClientImplementationTest {
     @Test
     fun `getWeeklyWeatherForecast should return error when api fails`() = runTest {
         // given
-        val country = "Berlin"
-        val days = "7"
-        val errorMessage = "Invalid api key"
-        coEvery { apiClient.getNextWeekWeather(country, days) } throws Exception(errorMessage)
+        coEvery {
+            apiClient.getNextWeekWeather(
+                TestData.country,
+                TestData.days
+            )
+        } throws Exception(TestData.errorMessage)
 
         // when
-        val result = weatherClient.getWeeklyWeatherForecast(country, days)
+        val result = weatherClient.getWeeklyWeatherForecast(TestData.country, TestData.days)
 
         // then
         result shouldBe WeeklyWeatherDataResult.Error(
-            errorMessage = errorMessage
+            errorMessage = TestData.errorMessage
         )
     }
 
     @Test
     fun `getWeatherHistory should return success when api succeeds`() = runTest {
         // given
-        val country = "Berlin"
-        val endDate = "2024-02-1"
-        val startDate = "2024-01-18"
         coEvery {
-            apiClient.getWeatherHistory(country, startDate, endDate)
+            apiClient.getWeatherHistory(TestData.country, TestData.startDate, TestData.endDate)
         } returns TestData.weeklyWeather
 
         // when
-        val result = weatherClient.getWeatherHistory(country, startDate, endDate)
+        val result =
+            weatherClient.getWeatherHistory(TestData.country, TestData.startDate, TestData.endDate)
 
         // then
         result shouldBe WeeklyWeatherDataResult.Success(
@@ -101,20 +101,17 @@ class WeatherClientImplementationTest {
     @Test
     fun `getWeatherHistory should return error when api fails`() = runTest {
         // given
-        val country = "Berlin"
-        val endDate = "2024-02-1"
-        val startDate = "2024-01-18"
-        val errorMessage = "Invalid api key"
         coEvery {
-            apiClient.getWeatherHistory(country, startDate, endDate)
-        } throws Exception(errorMessage)
+            apiClient.getWeatherHistory(TestData.country, TestData.startDate, TestData.endDate)
+        } throws Exception(TestData.errorMessage)
 
         // when
-        val result = weatherClient.getWeatherHistory(country, startDate, endDate)
+        val result =
+            weatherClient.getWeatherHistory(TestData.country, TestData.startDate, TestData.endDate)
 
         // then
         result shouldBe WeeklyWeatherDataResult.Error(
-            errorMessage = errorMessage
+            errorMessage = TestData.errorMessage
         )
     }
 

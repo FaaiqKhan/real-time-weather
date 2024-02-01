@@ -5,6 +5,12 @@ import com.practice.realtimeweather.model.ui.*
 
 object TestData {
 
+    val days = "7"
+    val country = "Berlin"
+    val endDate = "2024-02-1"
+    val startDate = "2024-01-18"
+    val errorMessage = "Invalid api key"
+
     private val location = Location(
         name = "Berlin",
         region = "Berlin",
