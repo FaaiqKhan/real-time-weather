@@ -8,10 +8,6 @@ data class Location(
     val name: String,
     val region: String,
     val country: String,
-    @Json(name = "lat")
-    val latitude: Double,
-    @Json(name = "lon")
-    val longitude: Double,
     @Json(name = "tz_id")
     val tzId: String,
     @Json(name = "localtime_epoch")

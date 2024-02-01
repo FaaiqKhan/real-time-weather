@@ -9,7 +9,7 @@ interface WeatherDataRepository {
 
     suspend fun getWeeklyWeatherForecast(country: String, days: String): WeeklyWeatherDataResult
 
-    suspend fun get2WeeksWeatherHistory(
+    suspend fun getWeatherHistory(
         country: String,
         startDate: String,
         endDate: String

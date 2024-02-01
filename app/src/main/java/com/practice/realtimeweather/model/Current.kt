@@ -31,7 +31,6 @@ data class Current(
     @Json(name = "precip_in")
     val precipitationIn: Double,
     val humidity: Double,
-    val cloud: Double,
     @Json(name = "feelslike_c")
     val feelsLikeCelsius: Double,
     @Json(name = "feelslike_f")
@@ -46,6 +45,4 @@ data class Current(
     val gustMph: Double,
     @Json(name = "gust_kph")
     val gustKph: Double,
-    @Json(name = "air_quality")
-    val airQuality: AirQuality?
 )

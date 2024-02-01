@@ -27,7 +27,7 @@ class WeatherClientImplementation @Inject constructor(
             WeeklyWeatherDataResult.Error(throwable.message)
         }
 
-    override suspend fun get2WeeksWeatherHistory(
+    override suspend fun getWeatherHistory(
         country: String,
         startDate: String,
         endDate: String

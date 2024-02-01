@@ -71,7 +71,7 @@ class RealTimeWeatherViewModel @Inject constructor(
         val last2Weeks = currentData.minusWeeks(2)
 
         viewModelScope.launch {
-            val result = realtimeweatherRepository.get2WeeksWeatherHistory(
+            val result = realtimeweatherRepository.getWeatherHistory(
                 country = "Berlin",
                 startDate = last2Weeks.format(formatter),
                 endDate = currentData.format(formatter),

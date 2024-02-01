@@ -55,4 +55,10 @@ object Version {
 
         const val PAGER = "0.27.1"
     }
+
+    object Test {
+
+        const val MOCKK = "1.13.9"
+        const val KOTEST = "5.8.0"
+    }
 }

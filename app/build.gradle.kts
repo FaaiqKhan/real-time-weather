@@ -78,6 +78,9 @@ dependencies {
     implementation(Dependency.Pager.PAGER)
 
     testImplementation(Dependency.JUNIT.J_UNIT)
+    testImplementation(Dependency.Test.MOCKK)
+    testImplementation(Dependency.Test.COROUTINE)
+    testImplementation(Dependency.Test.KOTEST)
 
     androidTestImplementation(Dependency.AndroidTest.TEST_EXT_JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)

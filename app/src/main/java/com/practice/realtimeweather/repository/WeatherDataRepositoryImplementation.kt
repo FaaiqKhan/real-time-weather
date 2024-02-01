@@ -18,10 +18,10 @@ class WeatherDataRepositoryImplementation @Inject constructor(
     ): WeeklyWeatherDataResult =
         weatherClient.getWeeklyWeatherForecast(country, days)
 
-    override suspend fun get2WeeksWeatherHistory(
+    override suspend fun getWeatherHistory(
         country: String,
         startDate: String,
         endDate: String
     ): WeeklyWeatherDataResult =
-        weatherClient.get2WeeksWeatherHistory(country, startDate, endDate)
+        weatherClient.getWeatherHistory(country, startDate, endDate)
 }

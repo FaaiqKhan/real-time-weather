@@ -86,4 +86,11 @@ object Dependency {
         const val PAGER =
             "com.google.accompanist:accompanist-pager-indicators:${Version.Pager.PAGER}"
     }
+
+    object Test {
+
+        const val MOCKK = "io.mockk:mockk:${Version.Test.MOCKK}"
+        const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.Coroutine.COROUTINE}"
+        const val KOTEST = "io.kotest:kotest-assertions-core:${Version.Test.KOTEST}"
+    }
 }
