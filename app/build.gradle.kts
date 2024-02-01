@@ -70,7 +70,7 @@ dependencies {
     implementation(Dependency.Coroutine.COROUTINE)
     implementation(Dependency.ViewModel.LIFECYCLE_KTX)
     implementation(Dependency.ViewModel.LIFECYCLE_COMPOSE)
-    implementation(Dependency.DependencyInjection.Hilt)
+    implementation(Dependency.DependencyInjection.HILT)
     implementation(Dependency.Moshi.MOSHI)
     implementation(Dependency.Moshi.MOSHI_KOTLIN)
     implementation(Dependency.Moshi.MOSHI_CONVERTOR)
