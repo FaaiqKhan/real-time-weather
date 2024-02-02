@@ -26,8 +26,8 @@ class RealTimeWeatherViewModelWeeklyHistoryViewStateTest : RealTimeWeatherViewMo
             coEvery {
                 weatherRepository.getWeatherHistory(
                     TestData.country,
-                    TestData.startDate,
-                    TestData.endDate,
+                    startDate,
+                    endDate,
                 )
             } returns TestData.weeklyWeatherDataResultSuccess
 

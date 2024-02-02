@@ -14,12 +14,6 @@ object Version {
         const val J_UNIT = "4.13.2"
     }
 
-    object AndroidTest {
-
-        const val TEST_EXT_JUNIT = "1.1.5"
-        const val ESPRESSO_CORE = "3.5.1"
-    }
-
     object Client {
 
         const val OK_HTTP = "4.12.0"
@@ -46,9 +40,9 @@ object Version {
         const val MOSHI = "1.11.0"
     }
 
-    object Coin {
+    object Coil {
 
-        const val COIN = "2.5.0"
+        const val COIL = "2.5.0"
     }
 
     object Pager {
@@ -61,5 +55,6 @@ object Version {
         const val MOCKK = "1.13.9"
         const val KOTEST = "5.8.0"
         const val TURBINE = "1.0.0"
+        const val JUNIT = "1.1.5"
     }
 }

@@ -1,5 +1,6 @@
 package com.practice.realtimeweather.ui
 
+import androidx.annotation.OpenForTesting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.practice.realtimeweather.model.TodayWeatherDataResult
@@ -15,8 +16,12 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
+private const val COUNTRY = "Berlin"
+private const val DAYS = "7"
+private const val DATE_FORMAT = "yyyy-MM-dd"
+
 @HiltViewModel
-class RealTimeWeatherViewModel @Inject constructor(
+open class RealTimeWeatherViewModel @Inject constructor(
     private val realtimeweatherRepository: WeatherDataRepository
 ) : ViewModel() {
 
@@ -32,15 +37,15 @@ class RealTimeWeatherViewModel @Inject constructor(
     init {
         getTodayWeatherStatus()
         getNextWeekWeatherData()
-        getLast2WeeksWeatherData()
+        getWeatherHistoryData()
     }
 
     private fun getTodayWeatherStatus() {
         viewModelScope.launch {
-            val result = realtimeweatherRepository.getTodayWeatherData("Berlin")
+            val result = realtimeweatherRepository.getTodayWeatherData(COUNTRY)
             todayWeatherViewState.value = when (result) {
                 is TodayWeatherDataResult.Error -> {
-                    ViewState.Error(result.errorMessage ?: "Error")
+                    ViewState.Error(result.errorMessage)
                 }
 
                 is TodayWeatherDataResult.Success -> {
@@ -52,10 +57,10 @@ class RealTimeWeatherViewModel @Inject constructor(
 
     private fun getNextWeekWeatherData() {
         viewModelScope.launch {
-            val result = realtimeweatherRepository.getWeeklyWeatherForecast("Berlin", "7")
+            val result = realtimeweatherRepository.getWeeklyWeatherForecast(COUNTRY, DAYS)
             weeklyWeatherForecastViewState.value = when (result) {
                 is WeeklyWeatherDataResult.Error -> {
-                    ViewState.Error(result.errorMessage ?: "Error")
+                    ViewState.Error(result.errorMessage)
                 }
 
                 is WeeklyWeatherDataResult.Success -> {
@@ -65,20 +70,20 @@ class RealTimeWeatherViewModel @Inject constructor(
         }
     }
 
-    private fun getLast2WeeksWeatherData() {
-        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    private fun getWeatherHistoryData() {
+        val formatter = DateTimeFormatter.ofPattern(DATE_FORMAT)
         val currentData = LocalDate.now()
         val last2Weeks = currentData.minusWeeks(2)
 
         viewModelScope.launch {
             val result = realtimeweatherRepository.getWeatherHistory(
-                country = "Berlin",
+                country = COUNTRY,
                 startDate = last2Weeks.format(formatter),
                 endDate = currentData.format(formatter),
             )
             weeklyWeatherHistoryViewState.value = when (result) {
                 is WeeklyWeatherDataResult.Error -> {
-                    ViewState.Error(result.errorMessage ?: "Error")
+                    ViewState.Error(result.errorMessage)
                 }
 
                 is WeeklyWeatherDataResult.Success -> {
@@ -94,6 +99,6 @@ class RealTimeWeatherViewModel @Inject constructor(
         data object Loading : ViewState
         data class TodayWeatherDataLoaded(val weatherData: TodayWeatherUIData) : ViewState
         data class WeeklyWeatherDataLoaded(val weeklyWeatherData: WeeklyWeatherUIData) : ViewState
-        data class Error(val errorMessage: String) : ViewState
+        data class Error(val errorMessage: String?) : ViewState
     }
 }

@@ -1,7 +1,7 @@
 package com.practice.realtimeweather.client
 
-import com.practice.realtimeweather.model.TodayWeather
-import com.practice.realtimeweather.model.WeeklyWeather
+import com.practice.realtimeweather.model.network.TodayWeather
+import com.practice.realtimeweather.model.network.WeeklyWeather
 import retrofit2.http.GET
 import retrofit2.http.Query
 

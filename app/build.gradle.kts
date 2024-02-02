@@ -74,7 +74,7 @@ dependencies {
     implementation(Dependency.Moshi.MOSHI)
     implementation(Dependency.Moshi.MOSHI_KOTLIN)
     implementation(Dependency.Moshi.MOSHI_CONVERTOR)
-    implementation(Dependency.Coin.COIN)
+    implementation(Dependency.Coil.COIL)
     implementation(Dependency.Pager.PAGER)
 
     testImplementation(Dependency.JUNIT.J_UNIT)
@@ -83,10 +83,9 @@ dependencies {
     testImplementation(Dependency.Test.KOTEST)
     testImplementation(Dependency.Test.TURBINE)
 
-    androidTestImplementation(Dependency.AndroidTest.TEST_EXT_JUNIT)
-    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+    androidTestImplementation(Dependency.Test.JUNIT)
     androidTestImplementation(platform(Dependency.AndroidX.COMPOSE_BOM))
-    androidTestImplementation(Dependency.AndroidTest.COMPOSE_UI_TEST_JUNIT)
+    androidTestImplementation(Dependency.Test.COMPOSE_UI_TEST_JUNIT)
 
     debugImplementation(Dependency.AndroidDebug.COMPOSE_UI_TOOLING)
     debugImplementation(Dependency.AndroidDebug.COMPOSE_UI_TEST_MANIFEST)

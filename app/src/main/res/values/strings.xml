@@ -6,6 +6,7 @@
     <string name="current_details">Current details</string>
     <string name="precipitation">Precipitation</string>
     <string name="wind">Wind</string>
-    <string name="feels_like">Feels like %1$s</string>
+    <string name="feels_like">Feels like %1$s \u00B0</string>
     <string name="km_h">km/h</string>
+    <string name="common_error">Oops Something went wrong, Try again later.</string>
 </resources>

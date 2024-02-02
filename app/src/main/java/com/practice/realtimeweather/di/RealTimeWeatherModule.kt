@@ -15,7 +15,6 @@ fun interface RealTimeWeatherModule {
 
     @Binds
     fun bindWeatherClientImplementation(apiClient: WeatherClientImplementation): WeatherClient
-
 }
 
 @Module

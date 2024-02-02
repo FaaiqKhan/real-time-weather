@@ -16,12 +16,12 @@ abstract class RealTimeWeatherViewModelBaseTest {
     @OptIn(ExperimentalCoroutinesApi::class)
     private val dispatcher: TestDispatcher = UnconfinedTestDispatcher()
 
-    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
-    val currentData = LocalDate.now()
-    val last2Weeks = currentData.minusWeeks(2)
+    private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    private val currentData = LocalDate.now()
+    private val last2Weeks = currentData.minusWeeks(2)
 
-    protected val startDate = last2Weeks.format(formatter)
-    protected val endDate = currentData.format(formatter)
+    protected val startDate : String = last2Weeks.format(formatter)
+    protected val endDate : String = currentData.format(formatter)
 
     protected val weatherRepository: WeatherDataRepository = mockk {
         coEvery { getTodayWeatherData(TestData.country) } just awaits

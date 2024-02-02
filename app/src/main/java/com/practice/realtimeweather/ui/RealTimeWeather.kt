@@ -8,8 +8,8 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.pager.*
 import com.practice.realtimeweather.R
-import com.practice.realtimeweather.ui.todayWeatherView.TodayWeatherView
-import com.practice.realtimeweather.ui.weeklyWeatherView.WeeklyWeatherView
+import com.practice.realtimeweather.ui.todayweatherview.TodayWeatherView
+import com.practice.realtimeweather.ui.weeklyweatherview.WeeklyWeatherView
 import com.practice.realtimeweather.utils.Utils
 import kotlinx.coroutines.launch
 

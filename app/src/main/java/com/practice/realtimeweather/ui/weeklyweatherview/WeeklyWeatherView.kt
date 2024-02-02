@@ -1,16 +1,16 @@
-package com.practice.realtimeweather.ui.weeklyWeatherView
+package com.practice.realtimeweather.ui.weeklyweatherview
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.practice.realtimeweather.R
 import com.practice.realtimeweather.model.ui.*
 import com.practice.realtimeweather.ui.RealTimeWeatherViewModel
+import com.practice.realtimeweather.ui.common.FullScreenLoader
 import com.practice.realtimeweather.ui.theme.RealTimeWeatherTheme
 
 @Composable
@@ -19,18 +19,17 @@ fun WeeklyWeatherView(
     viewState: RealTimeWeatherViewModel.ViewState
 ) {
     when (viewState) {
-        is RealTimeWeatherViewModel.ViewState.Error -> Text(text = viewState.errorMessage)
-        RealTimeWeatherViewModel.ViewState.Loading -> Box(
-            modifier = modifier,
-            contentAlignment = Alignment.Center
-        ) {
-            CircularProgressIndicator()
-        }
+        RealTimeWeatherViewModel.ViewState.Loading -> FullScreenLoader(modifier = modifier)
 
         is RealTimeWeatherViewModel.ViewState.WeeklyWeatherDataLoaded -> WeeklyWeatherLoadedView(
             modifier = modifier,
             weeklyWeatherData = viewState.weeklyWeatherData
         )
+
+        is RealTimeWeatherViewModel.ViewState.Error ->
+            Text(text = viewState.errorMessage
+                ?: stringResource(id = R.string.common_error)
+            )
 
         else -> Text(text = "Error Invalid State")
     }

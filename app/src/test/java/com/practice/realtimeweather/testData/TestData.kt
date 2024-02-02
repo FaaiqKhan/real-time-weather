@@ -1,15 +1,16 @@
 package com.practice.realtimeweather.testData
 
 import com.practice.realtimeweather.model.*
+import com.practice.realtimeweather.model.network.*
 import com.practice.realtimeweather.model.ui.*
 
 object TestData {
 
     const val days = "7"
-    val country = "Berlin"
-    val endDate = "2024-02-1"
-    val startDate = "2024-01-18"
-    val errorMessage = "Invalid api key"
+    const val country = "Berlin"
+    const val endDate = "2024-02-1"
+    const val startDate = "2024-01-18"
+    const val errorMessage = "Oops something went wrong, try again later"
 
     private val location = Location(
         name = "Berlin",

@@ -21,14 +21,6 @@ object Dependency {
         const val J_UNIT = "junit:junit:${Version.JUnit.J_UNIT}"
     }
 
-    object AndroidTest {
-
-        const val TEST_EXT_JUNIT = "androidx.test.ext:junit:${Version.AndroidTest.TEST_EXT_JUNIT}"
-        const val ESPRESSO_CORE =
-            "androidx.test.espresso:espresso-core:${Version.AndroidTest.ESPRESSO_CORE}"
-        const val COMPOSE_UI_TEST_JUNIT = "androidx.compose.ui:ui-test-junit4"
-    }
-
     object AndroidDebug {
 
         const val COMPOSE_UI_TOOLING = "androidx.compose.ui:ui-tooling"
@@ -76,9 +68,9 @@ object Dependency {
             "com.squareup.retrofit2:converter-moshi:${Version.Client.RETROFIT}"
     }
 
-    object Coin {
+    object Coil {
 
-        const val COIN = "io.coil-kt:coil-compose:${Version.Coin.COIN}"
+        const val COIL = "io.coil-kt:coil-compose:${Version.Coil.COIL}"
     }
 
     object Pager {
@@ -90,8 +82,11 @@ object Dependency {
     object Test {
 
         const val MOCKK = "io.mockk:mockk:${Version.Test.MOCKK}"
-        const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.Coroutine.COROUTINE}"
+        const val COROUTINE =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Version.Coroutine.COROUTINE}"
         const val KOTEST = "io.kotest:kotest-assertions-core:${Version.Test.KOTEST}"
         const val TURBINE = "app.cash.turbine:turbine:${Version.Test.TURBINE}"
+        const val JUNIT = "androidx.test.ext:junit:${Version.Test.JUNIT}"
+        const val COMPOSE_UI_TEST_JUNIT = "androidx.compose.ui:ui-test-junit4"
     }
 }

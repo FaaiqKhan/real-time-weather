@@ -1,4 +1,4 @@
-package com.practice.realtimeweather.model
+package com.practice.realtimeweather.model.network
 
 data class Condition(
     val text: String,

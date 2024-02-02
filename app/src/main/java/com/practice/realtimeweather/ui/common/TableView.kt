@@ -1,4 +1,4 @@
-package com.practice.realtimeweather.model.ui
+package com.practice.realtimeweather.ui.common
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding

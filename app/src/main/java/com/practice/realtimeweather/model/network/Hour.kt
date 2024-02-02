@@ -1,4 +1,4 @@
-package com.practice.realtimeweather.model
+package com.practice.realtimeweather.model.network
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

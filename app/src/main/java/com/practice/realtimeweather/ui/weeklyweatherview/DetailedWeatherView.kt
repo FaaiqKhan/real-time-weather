@@ -1,4 +1,4 @@
-package com.practice.realtimeweather.ui.weeklyWeatherView
+package com.practice.realtimeweather.ui.weeklyweatherview
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.*
@@ -18,6 +18,7 @@ import coil.compose.AsyncImage
 import com.practice.realtimeweather.R
 import com.practice.realtimeweather.model.ui.*
 import com.practice.realtimeweather.ui.common.HourlyWeatherView
+import com.practice.realtimeweather.ui.common.TableView
 import com.practice.realtimeweather.ui.theme.RealTimeWeatherTheme
 
 @Composable
