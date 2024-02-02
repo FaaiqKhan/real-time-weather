@@ -117,7 +117,6 @@ private fun TemperatureView(
             text = stringResource(R.string.feels_like, feelsLike),
             style = MaterialTheme.typography.bodySmall
         )
-        Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.content_padding_small)))
     }
 }
 
