@@ -4,10 +4,11 @@
     <dimen name="content_padding_extra_small">2dp</dimen>
     <dimen name="content_padding_small">8dp</dimen>
     <dimen name="content_padding_medium">14dp</dimen>
+    <dimen name="content_padding_extra_large">38dp</dimen>
     <dimen name="content_padding_large">18dp</dimen>
     <dimen name="weather_icon_size">90dp</dimen>
     <dimen name="weather_details_height">120dp</dimen>
     <dimen name="font_padding">4dp</dimen>
-    <dimen name="weather_icon_small">50dp</dimen>
-    <dimen name="hourly_weather_card_height">76dp</dimen>
+    <dimen name="weather_icon_small">55dp</dimen>
+    <dimen name="hourly_weather_card_height">90dp</dimen>
 </resources>

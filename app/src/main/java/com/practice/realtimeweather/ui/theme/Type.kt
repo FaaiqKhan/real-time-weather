@@ -37,7 +37,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     displaySmall = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         fontFamily = Lora,
         lineHeight = 20.sp,
         letterSpacing = 0.4.sp,
@@ -45,7 +45,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     headlineLarge = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         fontFamily = Lora,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
@@ -53,7 +53,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     headlineMedium = TextStyle(
-        fontSize = 14.sp,
+        fontSize = 16.sp,
         fontFamily = Lora,
         lineHeight = 20.sp,
         letterSpacing = 0.4.sp,
@@ -61,7 +61,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     headlineSmall = TextStyle(
-        fontSize = 12.sp,
+        fontSize = 14.sp,
         fontFamily = Lora,
         lineHeight = 20.sp,
         letterSpacing = 0.4.sp,
@@ -69,7 +69,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     titleLarge = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         fontFamily = Lora,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
@@ -77,7 +77,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     titleMedium = TextStyle(
-        fontSize = 14.sp,
+        fontSize = 16.sp,
         fontFamily = Lora,
         lineHeight = 20.sp,
         letterSpacing = 0.4.sp,
@@ -85,7 +85,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     titleSmall = TextStyle(
-        fontSize = 12.sp,
+        fontSize = 14.sp,
         fontFamily = Lora,
         lineHeight = 20.sp,
         letterSpacing = 0.4.sp,
@@ -93,7 +93,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     bodyLarge = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         fontFamily = Lora,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
@@ -101,7 +101,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     bodyMedium = TextStyle(
-        fontSize = 14.sp,
+        fontSize = 16.sp,
         fontFamily = Lora,
         lineHeight = 22.sp,
         letterSpacing = 0.4.sp,
@@ -109,7 +109,7 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     bodySmall = TextStyle(
-        fontSize = 10.sp,
+        fontSize = 14.sp,
         fontFamily = Lora,
         lineHeight = 6.sp,
         letterSpacing = 0.2.sp,
@@ -117,21 +117,21 @@ val Typography = Typography(
         platformStyle = PlatformTextStyle(includeFontPadding = false)
     ),
     labelLarge = TextStyle(
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         fontFamily = Lora,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
         fontWeight = FontWeight.Thin,
     ),
     labelMedium = TextStyle(
-        fontSize = 14.sp,
+        fontSize = 16.sp,
         fontFamily = Lora,
         lineHeight = 22.sp,
         letterSpacing = 0.4.sp,
         fontWeight = FontWeight.Thin
     ),
     labelSmall = TextStyle(
-        fontSize = 12.sp,
+        fontSize = 14.sp,
         fontFamily = Lora,
         lineHeight = 20.sp,
         letterSpacing = 0.4.sp,

@@ -6,6 +6,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
@@ -33,8 +34,9 @@ fun TodayWeatherView(modifier: Modifier = Modifier, viewState: RealTimeWeatherVi
         )
 
         is RealTimeWeatherViewModel.ViewState.Error ->
-            Text(text = viewState.errorMessage
-                ?: stringResource(id = R.string.common_error)
+            Text(
+                text = viewState.errorMessage
+                    ?: stringResource(id = R.string.common_error)
             )
 
         else -> Text(text = "Error Invalid State")
@@ -45,32 +47,45 @@ fun TodayWeatherView(modifier: Modifier = Modifier, viewState: RealTimeWeatherVi
 private fun TodayWeatherLoadedView(modifier: Modifier, weatherData: TodayWeatherUIData) {
     val data = weatherData.currentWeather
 
-    Column(modifier = modifier.background(color = Color.Blue.copy(alpha = 0.2f))) {
-        Column(
-            modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.screen_horizontal_padding))
-        ) {
-            DateView(data.date)
-            Row(
+    Box(
+        modifier = modifier.background(
+            brush = Brush.verticalGradient(
+                listOf(
+                    Color.Blue.copy(alpha = 0.2f),
+                    Color.Blue.copy(alpha = 0.3f),
+                ),
+            )
+        )
+    ) {
+        Column {
+            Column(modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.screen_horizontal_padding))) {
+                DateView(data.date)
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(dimensionResource(id = R.dimen.weather_details_height)),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    TemperatureView(temperature = data.temperature, feelsLike = data.feelsLike)
+                    WeatherConditionView(weatherCondition = data.weatherCondition)
+                }
+            }
+            Spacer(
+                modifier = Modifier
+                    .height(dimensionResource(id = R.dimen.content_padding_extra_large))
+            )
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(dimensionResource(id = R.dimen.weather_details_height)),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
+                    .background(color = Color.DarkGray.copy(alpha = 0.15f))
             ) {
-                TemperatureView(temperature = data.temperature, feelsLike = data.feelsLike)
-                WeatherConditionView(weatherCondition = data.weatherCondition)
+                CurrentDetailsView(details = data.details)
+                Divider()
+                PrecipitationView(rainDetails = data.rainDetails)
+                Divider()
+                WindDetailsView(windSpeed = data.windSpeed, windDetails = data.windDetails)
             }
-        }
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(color = Color.LightGray.copy(alpha = 0.4f))
-        ) {
-            CurrentDetailsView(details = data.details)
-            Divider()
-            PrecipitationView(rainDetails = data.rainDetails)
-            Divider()
-            WindDetailsView(windSpeed = data.windSpeed, windDetails = data.windDetails)
         }
     }
 }
@@ -146,7 +161,7 @@ private fun CurrentDetailsView(details: Map<String, String>) {
 }
 
 @Composable
-private fun PrecipitationView(rainDetails: Map<String, String>){
+private fun PrecipitationView(rainDetails: Map<String, String>) {
     Column(
         modifier = Modifier.padding(
             vertical = dimensionResource(id = R.dimen.content_padding_large),
